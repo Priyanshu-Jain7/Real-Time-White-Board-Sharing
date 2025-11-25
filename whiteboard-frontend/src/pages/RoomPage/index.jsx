@@ -9,7 +9,7 @@ const RoomPage = () => {
     const ctxRef=useRef(null)
 
     const [tool,setTool]= useState("pencil");
-    const [colour,setColour]= useState("black");
+    const [color,setColor]= useState("black");
 
     const[elements, setElements]= useState([]);
 
@@ -61,13 +61,13 @@ const RoomPage = () => {
         </div>
         <div className="col-md-3 mx-auto">
             <div className="align-items-center d-flex justify-content-center">
-                <label htmlFor="color">Select Colour:</label>
+                <label htmlFor="color">Select Color:</label>
                 <input 
                 type="color"
                 id="color"
                 className="mt-1 ms-3"
-                value={colour}
-                onChange={(e)=>setColour(e.target.value)}
+                value={color}
+                onChange={(e)=>setColor(e.target.value)}
                 />
             </div>
         </div>
@@ -86,6 +86,7 @@ const RoomPage = () => {
         ctxRef={ctxRef} 
         elements={elements}
         setElements={setElements}
+        color={color}
         tool={tool}
         />
       </div>
