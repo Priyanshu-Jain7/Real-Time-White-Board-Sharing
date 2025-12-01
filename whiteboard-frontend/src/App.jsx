@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import RoomPage from './pages/RoomPage';
 import io from 'socket.io-client';
 import { useEffect, useState } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const server = "http://localhost:5000";
 
@@ -58,6 +60,7 @@ const App = () => {
 
     return (
         <div className='container'>
+            <ToastContainer />
             <Routes>
                 <Route path="/" element={<Forms uuid={uuid} socket={socket} setUser={setUser} />} />
                 <Route path="/:roomId" element={<RoomPage user={user} socket={socket} users={users} />} />
